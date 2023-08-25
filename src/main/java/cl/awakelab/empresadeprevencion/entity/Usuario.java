@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -39,8 +41,9 @@ public class Usuario {
     @Column(name = "direccion", nullable = false, length = 70)
     private String direccion;
 
-    @Column(name = "id_tipo_usuario", nullable = false, length = 1)
-    private int idTipoUsuario;
+    @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "FK_rol", nullable = false)
+    private Rol rol;
 
     @Column(name = "login_usuario", nullable = false, length = 30)
     private String loginUsuario;
@@ -53,5 +56,7 @@ public class Usuario {
 
     @Column(name = "estado_activo", nullable = false)
     private Boolean estadoActivo;
+
+
 
 }
