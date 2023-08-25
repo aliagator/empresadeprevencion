@@ -42,5 +42,6 @@ public class Cliente {
     @Column(nullable = false)
     private boolean estado;
 
-
+    @ManyToMany(mappedBy = "listaClientes")
+    private List<Capacitacion> listaCapacitaciones;
 }
