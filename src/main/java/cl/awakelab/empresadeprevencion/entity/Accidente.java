@@ -40,10 +40,4 @@ public class Accidente {
     private Cliente cliente;
 
 
-
-    @Column(length = 10)
-    private String rut;
-
-
-
 }
