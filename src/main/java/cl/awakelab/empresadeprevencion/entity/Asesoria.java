@@ -18,5 +18,19 @@ public class Asesoria {
     private int id;
 
     @OneToMany(mappedBy = "asesoria")
-    private List<Tarea> tipo;
+    private List<Tarea> nombreAsesoria;
+
+    /*@ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "FK_Riesgo", nullable = false)
+    private Riesgo riesgo;*/
+
+    @Column(nullable = false, length = 100)
+    private String descripcionAsesoria;
+
+    @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "FK_Cliente", nullable = false)
+    private Cliente cliente;
+
+    @Column(nullable = false)
+    private boolean estado;
 }

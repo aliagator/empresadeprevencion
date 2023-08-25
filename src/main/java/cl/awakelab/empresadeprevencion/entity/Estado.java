@@ -18,5 +18,5 @@ public class Estado {
     private int id;
 
     @OneToMany(mappedBy = "estado")
-    private List<Tarea> tipo;
+    private List<Tarea> estado;
 }
