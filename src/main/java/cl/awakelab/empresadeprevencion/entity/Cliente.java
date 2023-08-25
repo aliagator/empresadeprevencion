@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -44,4 +45,13 @@ public class Cliente {
 
     @ManyToMany(mappedBy = "listaClientes")
     private List<Capacitacion> listaCapacitaciones;
+
+
+    @OneToMany(mappedBy = "Rol")
+    private List<Usuario> listaUsuarios;
+
+    @OneToMany(mappedBy = "listaClientes")
+    private List<Accidente> listaAccidentes;
+
+
 }
