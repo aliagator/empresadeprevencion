@@ -31,6 +31,10 @@ public class Capacitacion {
     @Column
     private Boolean estadoCapacitacion;
 
-    @OneToMany()
-    private Cliente cliente;
+    @ManyToMany
+    @JoinTable(name = "Cliente_Capacitacion",
+                joinColumns = @JoinColumn(name = "FK_Capacitacion",nullable = false),
+                inverseJoinColumns = @JoinColumn(name = "FK_Cliente",nullable = false))
+    private List<Cliente> listaClientes;
+
 }
