@@ -18,7 +18,7 @@ public class Accidente {
     private int id;
 
     @Column(length = 10)
-    private String rut;
+    private int rut;
 
     @Column(length = 8)
     private LocalDate fechaAccidente;
@@ -38,12 +38,6 @@ public class Accidente {
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "FK_Cliente", nullable = false)
     private Cliente cliente;
-
-
-
-    @Column(length = 10)
-    private String rut;
-
 
 
 }
