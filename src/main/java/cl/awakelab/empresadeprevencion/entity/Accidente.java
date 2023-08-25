@@ -18,7 +18,7 @@ public class Accidente {
     private int id;
 
     @Column(length = 10)
-    private String rut;
+    private int rut;
 
     @Column(length = 8)
     private LocalDate fechaAccidente;
