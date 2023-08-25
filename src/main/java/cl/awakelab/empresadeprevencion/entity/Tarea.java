@@ -32,14 +32,14 @@ public class Tarea {
     private LocalDate fechaEjecucion;
 
     @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "FK_estado",nullable = false)
+    @JoinColumn(name = "FK_Estado",nullable = false)
     private Estado estado;
 
     @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "FK_tipo_tarea",nullable = false)
+    @JoinColumn(name = "FK_Encomendado",nullable = false)
     private Encomendado encomendado;
 
     @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "FK_asesoria",nullable = false)
+    @JoinColumn(name = "FK_Asesoria",nullable = false)
     private Asesoria asesoria;
 }
