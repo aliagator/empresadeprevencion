@@ -39,5 +39,7 @@ public class Accidente {
     @JoinColumn(name = "FK_Cliente", nullable = false)
     private Cliente cliente;
 
-
+    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "FK_Trabajadores", nullable = false)
+    private Trabajador trabajador;
 }
